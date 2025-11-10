@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDN Boarding School Sentul E-Report</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="src/icons/idn.png" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg bg-primary-subtle py-4 navbar-light">
+      <div class="container">
+        <!-- Logo Navbar -->
+        <a href="#" class="navbar-brand d-flex align-items-center gap-2">
+          <img src="src/icons/idn.png" alt="logo" width="40" class="d-inline-block align-text-top rounded-2">
+          <span class="fw-bold text-primary">IDN E-Report</span>
+        </a>
+        <!-- Button Toggler -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <!-- Link Navbar -->
+         <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ms-auto gap-4 pt-4 pt-lg-0">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link text-primary">Menu</a>  
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link text-primary">About</a>  
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-primary">Services</a>  
+            </li>
+            <li class="nav-item">
+              <a href="reports.html" class="nav-link text-primary">Reports</a>  
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-primary">FAQ</a>  
+            </li>
+            <li>
+              <a href="reports.html" class="btn btn-primary">See Reports</a>
+            </li>
+           </ul>
+         </div>
+      </div>
+     </nav>
+
+    <!-- Hero Section -->
+    <main class="container py-5">
+
+
+  <h1 class="mb-4 fw-bold text-center">Dashboard E-Report</h1>
+
+
+  <div class="row text-center" id="dashboard-stats">
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="totalReports">0</h3>
+          <p>Total Reports</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="newReports">0</h3>
+          <p>Status: New</p>
+
+          </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="processReports">0</h3>
+          <p>Status: Processing</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-3 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h3 id="doneReports">0</h3>
+          <p>Status: Finished</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="text-center mt-4">
+    <a href="add-report.html" class="btn btn-primary">+ Add New Report</a>
+    <a href="reports.html" class="btn btn-outline-secondary">See All Reports</a>
+  </div>
+
+
+</main>
+
+
+<script>
+  function updateDashboard() {
+    const reports = JSON.parse(localStorage.getItem('reports')) || [];
+
+
+    const total = reports.length;
+    const New = reports.filter(r => r.status === "New").length;
+    const proses = reports.filter(r => r.status === "Processing").length;
+    const finished = reports.filter(r => r.status === "Finished").length;
+
+
+    document.getElementById('totalReports').innerText = total;
+    document.getElementById('newReports').innerText = New;
+ document.getElementById('processReports').innerText = processing;
+    document.getElementById('doneReports').innerText = finished;
+  }
+
+
+  updateDashboard();
+</script>
+
+
+    <!-- About Section -->
+
+    <!-- Services -->
+
+    <!-- Report -->
+
+    <!-- Frequently Ask Question -->
+
+    <!-- Footer -->
+
+
+<script>
+  AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
