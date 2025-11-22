@@ -1,0 +1,243 @@
+/* --- general tweaks --- */
+body {
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+/* hero button (the one you shared in the screenshot) */
+.btnHeroAdd {
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #fff; /* white border on blue hero */
+  border-radius: 20px;
+  padding: 0.7rem 1.2rem;
+  width: auto;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color .25s, color .25s, transform .12s;
+  font-weight: 600;
+}
+.btnHeroAdd:hover {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  transform: translateY(-2px);
+}
+
+/* Hero title tweaks */
+.hero-title {
+  font-size: 1.6rem;
+}
+.hero-subtitle {
+  opacity: 0.95;
+}
+
+/* Make sure hero image is responsive and does not overflow */
+#home img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Reports card text truncation */
+.card-text.text-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* small screens adjustments */
+@media (max-width: 767px) {
+  .hero-title {
+    font-size: 1.3rem;
+  }
+  .btnHeroAdd {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* keep the fixed-top navbar spacing when navbar height changes */
+main { scroll-padding-top: 100px; }
+
+/* small utility so cards keep consistent look */
+.card-img-top {
+  max-height: 180px;
+  object-fit: cover;
+}
+.heroAdd{
+    color: white;
+    background-color: none;
+    border-radius: 20px;
+    border: 2px solid white;
+    width: 20rem;
+    padding: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+section, div, img {
+    max-width: 100%;
+}
+
+/* hero text + image tweaks */
+.hero-title {
+  font-size: 1.8rem; /* desktop default */
+  line-height: 1.05;
+}
+.hero-subtitle { font-size: 1rem; opacity: 0.95; }
+
+/* hero button */
+.btnHeroAdd {
+  color: #000;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  padding: 0.6rem 1.1rem;
+  font-weight: 600;
+  transition: background-color .25s, color .25s, transform .12s;
+}
+.btnHeroAdd:hover {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  transform: translateY(-2px);
+}
+
+/* hero image */
+.hero-image {
+  max-height: 340px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* responsive tweaks */
+@media (max-width: 767px) {
+  .hero-title { font-size: 1.4rem; }
+  .hero-subtitle { font-size: .95rem; }
+  .btnHeroAdd { width: 100%; text-align:center; }
+}
+
+/* --- Layout fixes: spacing + centering --- */
+
+/* Add consistent horizontal padding for wide sections that looked edge-glued */
+.page-inner {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* Larger gutters on wide screens */
+@media (min-width: 992px) {
+  .page-inner {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Center the Add New Report button in dashboard area */
+.add-report-centered {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Make sure hero/add button group wraps nicely on small screens */
+.hero-buttons {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+/* Make the filter controls breathe on small screens */
+.reports-filter-row .col-md-5,
+.reports-filter-row .col-md-4,
+.reports-filter-row .col-md-3 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Reduce the horizontal stretch of the filter on small screens */
+@media (max-width: 575px) {
+  .reports-filter-row .col-md-5,
+  .reports-filter-row .col-md-4,
+  .reports-filter-row .col-md-3 {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .add-report-centered { margin-top: 0.75rem; }
+}
+
+/* Prevent any unexpected overflow from long content */
+html, body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after { box-sizing: inherit; }
+
+.about-box {
+  background: #ffffff;
+  max-width: 900px;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.hero-bg-section {
+  background-image: url('src/hero/hero-image.png'); /* set correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 340px; /* controls hero height */
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+/* ensure text stays readable on image */
+.hero-bg-section::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(13,110,253,0.20); /* subtle overlay */
+  pointer-events: none;
+}
+.hero-bg-section .container { position: relative; z-index: 2; }
+
+@media (max-width:767px) {
+  .hero-bg-section { min-height: 220px; padding-top: 1.2rem; padding-bottom: 1.2rem; }
+}
+
+/* HERO TEXT RESPONSIVE SIZING */
+.hero-title {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+}
+
+/* Default desktop sizes */
+.hero-title { font-size: 2.4rem; }      /* Main heading */
+.hero-title span { font-size: 2.6rem; } /* Middle line can be slightly bigger */
+.hero-subtitle { font-size: 1.2rem; }
+
+/* Tablet (medium screens) */
+@media (max-width: 992px) {
+    .hero-title { font-size: 2rem; }
+    .hero-title span { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1.05rem; }
+}
+
+/* Mobile (phones) */
+@media (max-width: 576px) {
+    .hero-title { font-size: 1.55rem; }
+    .hero-title span { font-size: 1.6rem; }
+    .hero-subtitle { font-size: .95rem; }
+}
